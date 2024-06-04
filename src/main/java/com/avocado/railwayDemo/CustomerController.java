@@ -9,13 +9,13 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/customer")
 @AllArgsConstructor
 public class CustomerController {
     private final static List<Customer> list = List.of(new Customer("Tan Thinh", 20),
                                                         new Customer("Avocaodo", 20));
 
-    @GetMapping
+    @GetMapping("/customers")
     public List<Customer> getCustomers(){
         return list;
     }
