@@ -9,11 +9,11 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("api/customer")
+@RequestMapping("/")
 @AllArgsConstructor
 public class CustomerController {
     private final static List<Customer> list = List.of(new Customer("Tan Thinh", 20),
-                                                        new Customer("Avocaod", 20));
+                                                        new Customer("Avocaodo", 20));
 
     @GetMapping
     public List<Customer> getCustomers(){
