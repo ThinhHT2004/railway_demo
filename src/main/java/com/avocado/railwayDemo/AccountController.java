@@ -1,6 +1,7 @@
 package com.avocado.railwayDemo;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class AccountController {
     }
 
     @PostMapping("/create")
-    public void createAccount(@RequestBody Account account){
-        accountRepo.save(account);
+    public ResponseEntity<Account> createAccount(@RequestBody Account account){
+        return ResponseEntity.ok(accountRepo.save(account));
     }
 }
