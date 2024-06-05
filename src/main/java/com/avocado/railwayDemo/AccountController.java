@@ -1,9 +1,7 @@
 package com.avocado.railwayDemo;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,5 +15,10 @@ public class AccountController {
     @GetMapping
     public List<Account> getAccounts(){
         return accountRepo.findAll();
+    }
+
+    @PostMapping("/create")
+    public void createAccount(@RequestBody Account account){
+        accountRepo.save(account);
     }
 }
